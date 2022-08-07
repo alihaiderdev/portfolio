@@ -103,6 +103,8 @@
   scroll-behavior: smooth;
 }
 
+$primary-color: #4f46e5;
+
 /* .logo {
   color: #000000;
   padding-top: 1rem;
@@ -118,7 +120,7 @@
   width: 40px;
   height: 40px;
   content: '';
-  background: #3e64ff;
+  background: $primary-color;
   z-index: -1;
   transform: translateY(-50%);
   border-radius: 50%;
@@ -133,7 +135,7 @@ header {
     &:after {
       display: block;
       content: '';
-      border-bottom: 2px solid #3e64ff;
+      border-bottom: 2px solid $primary-color;
       transform: scaleX(0);
       transition: transform 0.5s ease-in-out;
     }
@@ -144,15 +146,39 @@ header {
     }
   }
 }
+
 .active {
-  color: #3e64ff;
-  border-bottom: 2px solid #3e64ff;
+  color: $primary-color;
+  border-bottom: 2px solid $primary-color;
   // &:after {
-  //   border-bottom: 2px solid #3e64ff;
+  //   border-bottom: 2px solid $primary-color;;
   // }
 }
 
-._active {
+.service_card {
+  &:hover {
+    h2 {
+      &:after {
+        background-color: #fff;
+      }
+    }
+    svg {
+      color: #fff;
+    }
+  }
+  h2 {
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      right: 0;
+      content: '';
+      width: 30px;
+      height: 2px;
+      background-color: $primary-color;
+      margin: 0 auto;
+    }
+  }
 }
 
 .type_writer_animated_text {

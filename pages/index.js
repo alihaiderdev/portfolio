@@ -1,12 +1,15 @@
 import styles from '../styles/Home.module.scss';
-import Head from 'next/head';
-import Image from 'next/image';
 import AboutSection from '../components/AboutSection';
-import Resume from '../components/Resume';
 import { useEffect } from 'react';
 import ResumeList from '../components/ResumeList';
+import SkillProgressSlider from '../components/SkillProgressSlider';
+import Section from '../components/Section';
+import ServiceCard from '../components/ServiceCard';
+import Sidebar from '../components/Sidebar';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
+import { FiCamera } from 'react-icons/fi';
 
 const data = [
   {
@@ -37,8 +40,59 @@ const data = [
   },
 ];
 
+const skills = [
+  { skill: 'Photoshop', percent: 90 },
+  { skill: 'jQuery', percent: 80 },
+  { skill: 'HTML5', percent: 95 },
+  { skill: 'CSS3', percent: 90 },
+  { skill: 'WordPress', percent: 70 },
+  { skill: 'SEO', percent: 80 },
+];
+
+const camera = <FiCamera size={40} className='mx-auto mb-4 text-indigo-600' />;
+const services = [
+  {
+    // icon: '/images/photography.png',
+    icon: camera,
+    title: 'Web Design',
+    description:
+      'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+  },
+  {
+    icon: camera,
+    title: 'Photography',
+    description:
+      'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+  },
+  {
+    icon: camera,
+    title: 'Web Developer',
+    description:
+      'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+  },
+  {
+    icon: camera,
+    title: 'App Developer',
+    description:
+      'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+  },
+  {
+    icon: camera,
+    title: 'Branding',
+    description:
+      'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+  },
+  {
+    icon: camera,
+    title: 'Product Strategy',
+    description:
+      'A small river named Duden flows by their place and supplies it with the necessary regelialia.',
+  },
+];
+
 export default function Home() {
   const router = useRouter();
+  const style = `hover:translate-x-3 hover:text-indigo-600 transition 2s delay-200 duration-300`;
 
   useEffect(() => {
     const links = document.querySelectorAll('.link');
@@ -62,46 +116,46 @@ export default function Home() {
       </section>
       <section className='pt-24' id='resume'>
         <div className='md:grid md:grid-cols-12'>
-          <div className='sidebar md:col-span-3 sticky z-[1000] top-1/2'>
-            <ul>
-              <li className='ml-5 pb-1'>
+          <aside className='md:col-span-3'>
+            <ul className='sticky top-[5.5rem] -z-50 sm:flex md:block'>
+              <li className={`${style} pb-3`}>
                 <Link href={'/#education'} passHref>
                   <a
                     className={`font-poppins sm:text-sm md:text-xl ${
-                      router.asPath === '/#education' ? 'active' : ''
+                      router.asPath === '/#education' ? 'text-indigo-600' : ''
                     }`}
                   >
                     Education
                   </a>
                 </Link>
               </li>
-              <li className='ml-5 pb-1'>
+              <li className={`${style} pb-3`}>
                 <Link href={'/#experience'} passHref>
                   <a
                     className={`font-poppins sm:text-sm md:text-xl ${
-                      router.asPath === '/#experience' ? 'active' : ''
+                      router.asPath === '/#experience' ? 'text-indigo-600' : ''
                     }`}
                   >
                     Experience
                   </a>
                 </Link>
               </li>
-              <li className='ml-5 pb-1'>
+              <li className={`${style} pb-3`}>
                 <Link href={'/#skill'} passHref>
                   <a
                     className={`font-poppins sm:text-sm md:text-xl ${
-                      router.asPath === '/#skill' ? 'active' : ''
+                      router.asPath === '/#skill' ? 'text-indigo-600' : ''
                     }`}
                   >
                     Skill
                   </a>
                 </Link>
               </li>
-              <li className='ml-5 pb-1'>
+              <li className={`${style} pb-3`}>
                 <Link href={'/#award'} passHref>
                   <a
                     className={`font-poppins sm:text-sm md:text-xl ${
-                      router.asPath === '/#award' ? 'active' : ''
+                      router.asPath === '/#award' ? 'text-indigo-600' : ''
                     }`}
                   >
                     Award
@@ -109,44 +163,75 @@ export default function Home() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </aside>
           <div className='md:col-span-9'>
             <ResumeList data={data} id='education' />
             <ResumeList data={data} id='experience' />
-
             <div className='sm:pb-10 md:pb-16' id='skill'>
               <h2 className='font-black font-poppins text-indigo-600 sm:text-2xl sm:mb-4 md:text-4xl md:mb-6'>
-                Education
+                Skills
               </h2>
-              {data?.length > 0 &&
-                data?.map((d, i) => {
-                  return (
-                    <div
-                      key={i}
-                      className={`sm:px-4 md:px-6 sm:pb-4 sm:mb-4 md:pb-6 md:mb-6 border-solid border-b-2 border-neutral-300`}
-                    >
-                      <Resume resume={d} />
-                    </div>
-                  );
-                })}
+              <div className='md:grid md:grid-cols-12 md:gap-4'>
+                {skills?.length > 0 &&
+                  skills?.map((d, i) => {
+                    return (
+                      <div
+                        key={i}
+                        className='sm:mb-4 md:mb-0 md:col-span-6 xl:col-span-4'
+                      >
+                        <SkillProgressSlider data={d} />
+                      </div>
+                    );
+                  })}
+              </div>
             </div>
 
             <ResumeList data={data} id='award' />
           </div>
         </div>
       </section>
-      <section className='h-60 pt-24' id='services'>
-        services
-      </section>
-      <section className='h-60 pt-24' id='projects'>
-        projects
-      </section>
-      <section className='h-60 pt-24' id='blogs'>
-        blogs
-      </section>
-      <section className='h-60 pt-24' id='contact'>
-        contact
-      </section>
+      <Section
+        id={'services'}
+        title='Services'
+        description={
+          'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia'
+        }
+      >
+        <div className='grid grid-cols-12 gap-6 sm:pt-16'>
+          {services?.length > 0 &&
+            services?.map((service, index) => {
+              return (
+                <div
+                  key={index}
+                  className='sm:col-span-12 md:col-span-6 xl:col-span-4'
+                >
+                  <ServiceCard service={service} />
+                </div>
+              );
+            })}
+        </div>
+      </Section>
+      <Section
+        id={'projects'}
+        title='Our Projects'
+        description={
+          'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia'
+        }
+      ></Section>
+      <Section
+        id={'blogs'}
+        title='Our Blogs'
+        description={
+          'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia'
+        }
+      ></Section>
+      <Section
+        id={'contact'}
+        title='Contact Me'
+        description={
+          'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia'
+        }
+      ></Section>
     </>
   );
 }

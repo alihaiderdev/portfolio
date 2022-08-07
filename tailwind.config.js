@@ -31,7 +31,17 @@ module.exports = {
         '2xl': '6rem',
       },
     },
-    extend: {},
+    extend: {
+      screens: {
+        sm: '576px',
+        md: '768px',
+        lg: '992px',
+        xl: '1200px',
+        '2xl': '1400px',
+        '3xl': '1600px',
+      },
+    },
   },
+
   plugins: [],
 };

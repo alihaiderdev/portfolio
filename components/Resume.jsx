@@ -69,7 +69,7 @@ const Resume = ({
         </span>
       </div>
 
-      <p className='text-neutral-400'>{achievementsOrTasks}</p>
+      <p className='text-neutral-400 text-justify'>{achievementsOrTasks}</p>
 
       {/* <ul className='text-neutral-400 list-decimal'>
         {achievementsOrTasks.split(',')?.map((li, index) => {

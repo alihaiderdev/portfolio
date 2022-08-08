@@ -27,7 +27,7 @@ const AboutSection = () => {
           />
         </h6>
       </div>
-      <div className='grid sm:grid-cols-1 md:grid-cols-2 md:gap-2 pt-16'>
+      <div className='grid grid-cols-1 md:grid-cols-2 md:gap-2 pt-16'>
         {/* <div className='image_container'> */}
         <img
           src='/images/ali.jpeg'
@@ -85,9 +85,9 @@ const AboutSection = () => {
             complete
           </h2>
           <a
-            href=''
+            href='/resume.pdf'
             className="inline-block bg-indigo-600 py-4 px-6 uppercase rounded-3xl text-white font-['poppinsSemiBold']"
-            download={true}
+            download
           >
             Download Cv
           </a>

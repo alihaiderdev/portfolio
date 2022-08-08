@@ -5,7 +5,7 @@ const Section = ({ id, title, description, children }) => {
     <section className='py-24' id={id}>
       <div className='text-center'>
         {title && (
-          <h2 className='font-[poppinsExtraBold] tracking-wide sm:text-4xl sm:mb-4 md:text-5xl md:mb-8'>
+          <h2 className='font-[poppinsExtraBold] tracking-wide text-4xl mb-4 md:text-5xl md:mb-8'>
             {title}
           </h2>
         )}

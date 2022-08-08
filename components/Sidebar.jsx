@@ -8,12 +8,12 @@ const Sidebar = () => {
 
   return (
     <aside className='md:col-span-3'>
-      <ul className='sticky top-[5.5rem] -z-50 sm:flex md:block'>
+      <ul className='sticky top-[5.5rem] -z-50 flex md:block'>
         <li className={`${style} pb-3`}>
           <Link href={'/#education'} passHref>
             <a
-              className={`font-poppins sm:text-sm md:text-xl ${
-                router.asPath === '/#education' ? 'text-indigo-600' : ''
+              className={`font-poppins text-sm md:text-xl ${
+                router.asPath === '/#education' ? 'active' : ''
               }`}
             >
               Education
@@ -23,8 +23,8 @@ const Sidebar = () => {
         <li className={`${style} pb-3`}>
           <Link href={'/#experience'} passHref>
             <a
-              className={`font-poppins sm:text-sm md:text-xl ${
-                router.asPath === '/#experience' ? 'text-indigo-600' : ''
+              className={`font-poppins text-sm md:text-xl ${
+                router.asPath === '/#experience' ? 'active' : ''
               }`}
             >
               Experience
@@ -34,8 +34,8 @@ const Sidebar = () => {
         <li className={`${style} pb-3`}>
           <Link href={'/#skill'} passHref>
             <a
-              className={`font-poppins sm:text-sm md:text-xl ${
-                router.asPath === '/#skill' ? 'text-indigo-600' : ''
+              className={`font-poppins text-sm md:text-xl ${
+                router.asPath === '/#skill' ? 'active' : ''
               }`}
             >
               Skill
@@ -45,8 +45,8 @@ const Sidebar = () => {
         <li className={`${style} pb-3`}>
           <Link href={'/#award'} passHref>
             <a
-              className={`font-poppins sm:text-sm md:text-xl ${
-                router.asPath === '/#award' ? 'text-indigo-600' : ''
+              className={`font-poppins text-sm md:text-xl ${
+                router.asPath === '/#award' ? 'active' : ''
               }`}
             >
               Award

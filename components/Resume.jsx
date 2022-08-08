@@ -28,7 +28,7 @@ const Resume = ({
   return (
     <div className='resume'>
       <div className='flex justify-between items-center'>
-        <h2 className='font-black font-poppins sm:text-2xl md:text-3xl sm:py-1 md:py-2'>
+        <h2 className='font-black font-poppins text-2xl md:text-3xl py-1 md:py-2'>
           {titleOrPosition}
         </h2>
         {city && country && (
@@ -38,7 +38,7 @@ const Resume = ({
         )}
       </div>
 
-      <h6 className='font-black font-poppins sm:text-lg md:text-xl'>
+      <h6 className='font-black font-poppins text-lg md:text-xl'>
         {workspaceOrCompany}
       </h6>
       {companyDescription && (
@@ -60,11 +60,11 @@ const Resume = ({
         </ul>
       )} */}
 
-      <div className='flex justify-between sm:py-1 md:py-2'>
-        <h6 className='text-indigo-600 font-poppins sm:text-lg md:text-xl'>
+      <div className='flex justify-between py-1 md:py-2'>
+        <h6 className='text-indigo-600 font-poppins text-lg md:text-xl'>
           Achievements/Tasks
         </h6>
-        <span className='text-indigo-600 font-poppins sm:text-sm md:text-lg'>
+        <span className='text-indigo-600 font-poppins text-sm md:text-lg'>
           {startDate} / {endDate ? endDate : 'Present'}
         </span>
       </div>

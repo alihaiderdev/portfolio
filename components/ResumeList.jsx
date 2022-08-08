@@ -4,8 +4,8 @@ import Resume from './Resume';
 
 const ResumeList = ({ id, data }) => {
   return (
-    <div className='resume sm:pb-10 md:pb-16' id={id}>
-      <h2 className='font-black font-poppins text-indigo-600 sm:text-2xl sm:mb-4 md:text-4xl md:mb-6'>
+    <div className='resume pb-10 md:pb-16' id={id}>
+      <h2 className='font-black font-poppins text-indigo-600 text-2xl mb-4 md:text-4xl md:mb-6'>
         {capitalizeEachWordFirstLetterInString(id)}
       </h2>
       {data?.length > 0 &&
@@ -15,9 +15,9 @@ const ResumeList = ({ id, data }) => {
               key={index}
               // ${
               //   data?.length !== index + 1 &&
-              //   'sm:pb-4 sm:mb-4 md:pb-6 md:mb-6 border-solid border-b-2 border-neutral-300'
+              //   'pb-4 mb-4 md:pb-6 md:mb-6 border-solid border-b-2 border-neutral-300'
               // }
-              className={`sm:pb-4 sm:mb-4 md:pb-6 md:mb-6 border-solid border-b-[1px] border-neutral-300`}
+              className={`pb-4 mb-4 md:pb-6 md:mb-6 border-solid border-b-[1px] border-neutral-300`}
             >
               <Resume resume={item} />
             </div>

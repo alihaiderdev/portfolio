@@ -11,7 +11,7 @@ const ProjectCard = ({ project: { slug, image, title, category } }) => {
             backgroundImage: `url(${image})`,
           }}
         >
-          <div className='opacity-0 bg-indigo-600 w-full h-full grid place-items-center -z-10'>
+          <div className='overlay opacity-0 bg-indigo-600 w-full h-full grid place-items-center -z-10'>
             <div className='text-center text-white'>
               <h2 className='font-poppins text-lg leading-6'>{title}</h2>
               <h6 className='uppercase tracking-wider font-semibold pt-2 md:pt-4'>

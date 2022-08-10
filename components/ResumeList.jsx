@@ -5,7 +5,7 @@ import Resume from './Resume';
 const ResumeList = ({ id, data }) => {
   return (
     <div className='resume pb-10 md:pb-16' id={id}>
-      <h2 className='font-black font-poppins text-indigo-600 text-2xl mb-4 md:text-4xl md:mb-6'>
+      <h2 className='font-black font-poppins text-indigo-600 text-3xl mb-4 md:text-4xl md:mb-6'>
         {capitalizeEachWordFirstLetterInString(id)}
       </h2>
       {data?.length > 0 &&

@@ -11,14 +11,8 @@ const Header = () => {
           <Link href={'/'} passHref>
             <a className='logo'></a>
           </Link>
-          {/* <nav className='md:w-3/5 lg:w-1/2'> */}
           <nav>
             <ul className='flex items-center justify-between'>
-              <li className='ml-5'>
-                <Link href={'/'} passHref>
-                  <a>Home</a>
-                </Link>
-              </li>
               <li className='ml-5'>
                 <Link href={'/#about'} passHref>
                   <a

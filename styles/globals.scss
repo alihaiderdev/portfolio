@@ -109,6 +109,10 @@ a {
   text-decoration: none;
 }
 
+textarea {
+  resize: none;
+}
+
 header {
   li {
     &:after {
@@ -133,8 +137,11 @@ header {
 
 .project_card {
   &:hover {
-    div {
+    .overlay {
       opacity: 0.8;
+    }
+    .content {
+      opacity: 1;
     }
   }
 }

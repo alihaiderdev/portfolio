@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 const Sidebar = () => {
   const router = useRouter();
-  const style = `hover:translate-x-3 hover:text-indigo-600 transition 2s delay-200 duration-300`;
+  const style = `ml-3 hover:translate-x-3 hover:text-indigo-600 transition 2s delay-200 duration-300`;
 
   return (
     <aside className='md:col-span-3'>

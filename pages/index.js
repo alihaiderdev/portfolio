@@ -13,6 +13,7 @@ import BlogCard from '../components/BlogCard';
 import ProjectCard from '../components/ProjectCard';
 import { FiCamera } from 'react-icons/fi';
 import AvailableSection from '../components/AvailableSection';
+import ContactSection from '../components/ContactSection';
 
 const camera = <FiCamera size={40} className='mx-auto mb-4 text-indigo-600' />;
 
@@ -57,7 +58,8 @@ const services = [
 ];
 export default function Home() {
   const router = useRouter();
-  const style = `hover:translate-x-3 hover:text-indigo-600 transition 2s delay-200 duration-300`;
+  const style = `before:inline-block before:content-[""] before:w-3 before:translate-y-[-0.3rem] before:h-1 before:bg-indigo-600 before:mr-[0.3rem] mr-4 md:mr-0 md:pb-3 hover:translate-x-3 hover:text-indigo-600 transition 2s delay-200 duration-300`;
+
   useEffect(() => {
     const links = document.querySelectorAll('.link');
     const sections = document.querySelectorAll('section');
@@ -65,7 +67,7 @@ export default function Home() {
       let len = sections.length;
       while (--len && window.scrollY + 75 < sections[len].offsetTop) {}
       links.forEach((link) => link.classList.remove('active'));
-      links[len].classList.add('active');
+      links[len]?.classList.add('active');
     };
     window.addEventListener('scroll', activeMenu);
     return () => {
@@ -80,12 +82,12 @@ export default function Home() {
       </section>
       <section className='pt-24' id='resume'>
         <div className='md:grid md:grid-cols-12'>
-          <aside className='md:col-span-3'>
-            <ul className='sticky top-[5.5rem] -z-50 flex md:block'>
-              <li className={`${style} pb-3`}>
+          <aside className='sidebar md:col-span-3 pb-5 md:pb-0'>
+            <ul className='sticky top-[22.5rem] -z-50 flex md:block'>
+              <li className={style}>
                 <Link href={'/#education'} passHref>
                   <a
-                    className={`font-poppins text-sm md:text-xl ${
+                    className={`font-poppins text-lg md:text-xl ${
                       router.asPath === '/#education' ? 'active' : ''
                     }`}
                   >
@@ -93,10 +95,10 @@ export default function Home() {
                   </a>
                 </Link>
               </li>
-              <li className={`${style} pb-3`}>
+              <li className={style}>
                 <Link href={'/#experience'} passHref>
                   <a
-                    className={`font-poppins text-sm md:text-xl ${
+                    className={`font-poppins text-lg md:text-xl ${
                       router.asPath === '/#experience' ? 'active' : ''
                     }`}
                   >
@@ -104,10 +106,10 @@ export default function Home() {
                   </a>
                 </Link>
               </li>
-              <li className={`${style} pb-3`}>
+              <li className={style}>
                 <Link href={'/#skill'} passHref>
                   <a
-                    className={`font-poppins text-sm md:text-xl ${
+                    className={`font-poppins text-lg md:text-xl ${
                       router.asPath === '/#skill' ? 'active' : ''
                     }`}
                   >
@@ -115,10 +117,10 @@ export default function Home() {
                   </a>
                 </Link>
               </li>
-              <li className={`${style} pb-3`}>
+              <li className={style}>
                 <Link href={'/#award'} passHref>
                   <a
-                    className={`font-poppins text-sm md:text-xl ${
+                    className={`font-poppins text-lg md:text-xl ${
                       router.asPath === '/#award' ? 'active' : ''
                     }`}
                   >
@@ -185,7 +187,6 @@ export default function Home() {
         <div className='grid grid-cols-12 pt-16'>
           {projects?.length > 0 &&
             projects?.map((project, index) => {
-              console.log(project);
               return (
                 <div
                   key={index}
@@ -225,7 +226,9 @@ export default function Home() {
         description={
           'Far far away, behind the word mountains, far from the countries Vokalia and Consonantia'
         }
-      ></Section>
+      >
+        <ContactSection />
+      </Section>
     </>
   );
 }

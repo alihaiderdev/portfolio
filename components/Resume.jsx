@@ -60,7 +60,7 @@ const Resume = ({
         </ul>
       )} */}
 
-      <div className='flex justify-between py-1 md:py-2'>
+      <div className='flex justify-between items-center py-1 md:py-2'>
         <h6 className='text-indigo-600 font-poppins text-lg md:text-xl'>
           Achievements/Tasks
         </h6>
